@@ -6,8 +6,21 @@
 }
 
 :root {
+    --cover-art-width: 40%;
     --odin-logo-height: 70px;
-    --header-height: 200px;
+    --intro-height: 250px;
+    /* --form-height: 400px; */
+    --general-padding: 20px;
+    --margin-line-break: 20px;
+    --input-label-font-size: 0.75rem;
+    --input-label-font-weight: 500;
+    --base-color: #596D48;
+    --background-base-color: rgb(241, 241, 241);
+}
+
+body {
+    background-color: var(--background-base-color);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 img {
@@ -15,27 +28,65 @@ img {
     height: 100%;
 }
 
+label {
+    font-size: var(--input-label-font-size);
+    letter-spacing: 1px;
+    font-weight: var(--input-label-font-weight);
+}
+
+button {
+    padding: calc(var(--general-padding) / 2 ) calc(var(--general-padding) * 2);
+    color: white;
+    background-color: var(--base-color);
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+p {
+    margin: var(--margin-line-break) 0;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--base-color)
+}
+
+.right {
+    display: inline-block;
+    margin-left: var(--cover-art-width);
+}
+
+
 .left-sidebar {
-    text-align: center;
-    position: relative;
-    float: left;
-    width: 40%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--cover-art-width);
     height: 100vh;
-    background-image:  url("images/halie-west-25xggax4bSA-unsplash.jpg");
+
+    background-image: url("images/halie-west-25xggax4bSA-unsplash.jpg");
     background-size: cover;
     color: white;
+    
+    text-align: center;
 
     .credit {
         position: absolute;
         bottom: 0;
         width: 100%;
+        padding: var(--general-padding);
     }
 
     .title {
+        padding: var(--general-padding) 0;
+        margin-top: calc(
+            var(--intro-height) - var(--odin-logo-height) - var(--general-padding) * 2
+        );
         background-color: rgba(0, 0, 0, 0.5);
-        padding: 10px 0;
         font-size: 2rem;
-        margin-top: var(--header-height);
 
         img {
             width: auto;
@@ -44,3 +95,66 @@ img {
         }
     }
 }
+
+.introduction{
+    height: var(--intro-height);
+    padding: var(--general-padding);
+    padding-top: 50px;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: justify;
+
+    p:nth-last-of-type(1) {
+        margin-top: var(--margin-line-break);
+    } 
+}
+
+.information-card {
+    color: grey;
+    padding: 0;
+    margin: 0;
+}
+
+.form-section {
+    padding: var(--general-padding);
+    background: white;
+    box-shadow: 0px 1px 5px grey;
+
+    input {
+        display: inline-block;
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        outline: none;
+
+        &:focus {
+            /* outline: 1px solid blue; */
+            border: 1px solid blue;
+            box-shadow: 0px 1px 5px grey;
+        }
+        
+        &:placeholder-shown {
+            border: 1px solid grey;
+        }
+    }
+
+    .form-element {
+        display: inline-block;
+        width: 40%;
+        margin-top: var(--margin-line-break);
+
+        &:nth-of-type(odd) {
+            margin-right: var(--margin-line-break);
+        }
+
+        &:nth-last-of-type(1) {
+            margin-bottom: var(--margin-line-break);
+        }
+    }
+}
+
+.footer-section {
+    padding: var(--general-padding);
+}
+
