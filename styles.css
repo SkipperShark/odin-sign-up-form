@@ -6,18 +6,6 @@
     font-style: normal;
     font-display: swap;
 }
-/* 
-@font-face {
-    font-family: 'Norse';
-    src: url('Norse-Bold.woff2') format('woff2'),
-        url('Norse-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-} */
-
-
-
 
 /* CSS Reset */
 * {
@@ -30,7 +18,6 @@
     --cover-art-width: 40%;
     --odin-logo-height: 70px;
     --intro-height: 250px;
-    /* --form-height: 400px; */
     --general-padding: 20px;
     --margin-line-break: 20px;
     --input-label-font-size: 0.75rem;
@@ -81,7 +68,6 @@ a {
     display: inline-block;
     margin-left: var(--cover-art-width);
 }
-
 
 .left-sidebar {
     display: inline-block;
