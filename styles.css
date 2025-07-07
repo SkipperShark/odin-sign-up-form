@@ -1,3 +1,24 @@
+@font-face {
+    font-family: 'Norse';
+    src: url('./fonts/Norse-Bold.woff2') format('woff2'),
+        url('./fonts/Norse-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+/* 
+@font-face {
+    font-family: 'Norse';
+    src: url('Norse-Bold.woff2') format('woff2'),
+        url('Norse-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+} */
+
+
+
+
 /* CSS Reset */
 * {
     padding: 0;
@@ -16,6 +37,9 @@
     --input-label-font-weight: 500;
     --base-color: #596D48;
     --background-base-color: rgb(241, 241, 241);
+    --input-base-color: #dbb8f7;
+    --input-invalid-color: red;
+    --input-valid-color: green;
 }
 
 body {
@@ -81,17 +105,18 @@ a {
     }
 
     .title {
+        font-family: "Norse";
         padding: var(--general-padding) 0;
         margin-top: calc(
             var(--intro-height) - var(--odin-logo-height) - var(--general-padding) * 2
         );
         background-color: rgba(0, 0, 0, 0.5);
-        font-size: 2rem;
+        font-size: 55px;
 
         img {
             width: auto;
             height: var(--odin-logo-height);
-            vertical-align: middle;
+            vertical-align: sub;
         }
     }
 }
@@ -126,16 +151,27 @@ a {
         width: 100%;
         padding: 5px;
         border-radius: 5px;
-        outline: none;
-
-        &:focus {
-            /* outline: 1px solid blue; */
-            border: 1px solid blue;
-            box-shadow: 0px 1px 5px grey;
+        border: none;
+        outline: 1.5px solid var(--input-base-color);
+        
+        &:valid {
+            outline-color: var(--input-valid-color);
         }
         
+        &:invalid {
+            outline-color: var(--input-invalid-color);
+        }
+
         &:placeholder-shown {
-            border: 1px solid grey;
+            outline-color: var(--input-base-color);
+        }
+
+        &:focus:placeholder-shown {
+            outline-color: blue;
+        }
+
+        &:focus {
+            box-shadow: 0px 4px 5px grey;
         }
     }
 
